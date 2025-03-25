@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Membership</title>
+    <link rel="icon" href="images/PRO_logo.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: poppins;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .language{
+            background-color: rgb(183, 178, 178);
+            width: 90px;
+            height: 25px;
+            margin-top: 15px;
+            border-radius: 12px;
+        }
+        .head-line{
+            padding-left: 990px;
+        }
+        .pro-logo{
+            width: 15%;
+            height: 15%;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+        }
+        .logo {
+            display: flex;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            background-color: #000080;
+            max-width: 100%;
+            color: white;
+            padding: 5px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+        }
+        .pricing {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .price {
+            font-size: 24px;
+            color: green;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .btn{
+            background-color: #000080;
+            color: white;
+            width: 120px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .faq {
+            padding-left: 200px;
+            margin-right: 190px;
+        }
+        .faq-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .answer {
+            display: none; /* Initially hide the answer */
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .testimonial {
+            padding: 20px;
+            text-align: center;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        footer {
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .language-switch{
+            position: relative;
+        }
+        .details {
+            text-align: left; /* Align text to the left */
+        }
+        .details li {
+            margin-left: 20px; /* Add some left margin for better alignment */
+        }
+    </style>
+    <script>
+        function toggleAnswer(index) {
+            const answer = document.getElementById('answer-' + index);
+            answer.style.display = answer.style.display === 'none' || answer.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png">  
+        </div>
+        <nav>
+            <ul class="head-line">
+                <li><a href="main1.html">Home</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="cart1.html">Cart</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <select class="language">
+                <option value="en">English</option>
+                <option value="ta">Tamil</option>
+                <option value="tl">Telugu</option>
+                <option value="Ma">malayalam</option>
+            </select>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <img src="images/PRO_logo.png" class="pro-logo" alt="Pro Membership">
+        <br>
+        <img src="images/PRO.jpg">
+        <h2>Save up to 15% in each service</h2>
+    </section>
+    
+    <section class="pricing">
+        <div class="card">
+            <h3>6 months</h3>
+            <ol class="details">
+                <li>10% Discount on every service</li>
+                <li>Extra Feature can be obtained every time</li>
+                <li>₹100 - 150 cashback</li>
+            </ol>
+            <p class="price">₹199 <span class="old-price">299</span></p>
+            <button class="btn">Buy Now</button>
+        </div>
+        <div class="card">
+            <h3>12 months</h3>
+            <ol class="details">
+                <li>15% Discount on every service</li>
+                <li>Extra Feature can be obtained every time</li>
+                <li>₹300 - 500 cashback</li>
+            </ol>
+            <p class="price">₹399 <span class="old-price">499</span></p>
+            <button class="btn">Buy Now</button>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <h2>FAQs</h2>
+        <div class="faq-item" onclick="toggleAnswer(1)">What are the benefits of PRO membership?
+            <span id="answer-1" class="answer">You get discounts and cashback on services.</span>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(2)">Is there a limit for maximum discount transactions?
+            <span id="answer-2" class="answer">Yes, there are limits based on the service.</span>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(3)">How does it work and can I pay membership through cash?
+            <span id="answer-3" class="answer">You can pay through various methods including cash.</span>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(4)">Can I cancel membership after buying?
+            <span id="answer-4" class="answer">Yes, you can cancel your membership anytime.</span>
+        </div>
+    </section>
+    
+    <section class="testimonial">
+        <h2>Hear from Happy Customer</h2>
+        <div class="testimonial-card">
+            <img src="images/profile_img2.png" alt="Marquinaa">
+            <p>Fonolosa<br><small>Member since Oct 2023</small></p>
+            <p>Fully satisfied with M2F services...</p>
+            <p class="saved">₹1,435 saved in PRO</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 M2F. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login_page.css">
+</head>
+<body>
+    <main class="login-container">
+        <div class="login-form-container">
+            <div class="login-form-wrapper">
+                <h1>Welcome back!</h1>
+
+                <a href="main1.html">
+                    <button class="google-login">
+                        <img src="https://www.google.com/favicon.ico" alt="Google Icon" class="google-icon">
+                        Login with Google
+                    </button>
+                </a>
+
+                <div class="divider">
+                    <span>Or login with email</span>
+                </div>
+
+                <form class="login-form" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="login-button">Login</button>
+
+
+                    <p class="signup-text">
+                        Don't have an account? <a href="User_Signup.html">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Healthcare professional assisting patient"
+                 class="login-image">
+        </div>
+    </main>
+    <script>
+        async function loginUser(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("http://localhost:5000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                localStorage.setItem("token", data.token); // Store token
+                alert("Login successful!");
+                window.location.href = "main1.html"; // Redirect to main page
+            } else {
+                alert(data.msg);
+            }
+        }
+    </script>
+</body>
+</html>

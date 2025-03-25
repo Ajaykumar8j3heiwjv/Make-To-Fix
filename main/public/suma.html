@@ -1,0 +1,91 @@
+<div class="service-section">
+    <div class="service-container">
+        <button class="prev-btn">&#8592;</button>
+        <div class="blog-card-wrapper">
+            <div class="blog-card">
+                <article>
+                    <img src="service1.jpg" alt="Refrigerator Service">
+                    <h3>Refrigerator Service</h3>
+                    <p>₹500/hour</p>
+                    <button class="more-info">More Info</button>
+                </article>
+                <article>
+                    <img src="service2.jpg" alt="Switch Replacement">
+                    <h3>Switch Replacement</h3>
+                    <p>₹300/hour</p>
+                    <button class="more-info">More Info</button>
+                </article>
+                <article>
+                    <img src="service3.jpg" alt="AC Repair">
+                    <h3>AC Repair</h3>
+                    <p>₹400/hour</p>
+                    <button class="more-info">More Info</button>
+                </article>
+            </div>
+        </div>
+        <button class="next-btn">&#8594;</button>
+    </div>
+</div>
+
+<style>
+    .service-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .service-container {
+        display: flex;
+        align-items: center;
+    }
+    .blog-card-wrapper {
+        display: flex;
+        overflow: hidden;
+        width: 60vw;
+    }
+    .blog-card {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .blog-card article {
+        min-width: 300px;
+        margin: 0 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const blogCard = document.querySelector(".blog-card");
+        const articles = blogCard.children;
+        const nextBtn = document.querySelector(".next-btn");
+        const prevBtn = document.querySelector(".prev-btn");
+        let index = 0;
+
+        function updateView() {
+            blogCard.style.transform = `translateX(-${index * 320}px)`;
+        }
+
+        nextBtn.addEventListener("click", function() {
+            if (index >= articles.length - 1) {
+                index = 0;
+            } else {
+                index++;
+            }
+            updateView();
+        });
+
+        prevBtn.addEventListener("click", function() {
+            if (index <= 0) {
+                index = articles.length - 1;
+            } else {
+                index--;
+            }
+            updateView();
+        });
+    });
+</script>
