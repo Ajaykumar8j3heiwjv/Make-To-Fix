@@ -108,33 +108,52 @@
         
         <section class="payment-issue">
             <h2> 💳 Payment Issue with PRO Membership</h2>
-            <br>
             <p>We strive to ensure a smooth and secure payment experience for our customers. However, we understand that issues can occasionally arise. 
                 So please describe what issues you are facing with Pro membership and upload a screenshot or billing receipt of the transaction.</p>
-            <br>
-            <textarea placeholder="Describe the issue"></textarea>
-            <br>
-            <br>
+        
+            <textarea id="issue-description" placeholder="Describe the issue"></textarea>
             
             <div class="upload-section">
                 <label class="upload-box">
-                    <input type="file" accept="image/*,application/pdf">
+                    <input type="file" accept="image/*,application/pdf" id="file-upload-1">
                     <img src="images/upload_icon.png" alt="Upload Icon">
                     <p>Upload</p>
                 </label>
-                <br>
                 <p class="file-size">Maximum Upload File Size: <span>128MB</span></p>
+        
                 <label class="upload-box">
-                    <input type="file" accept="image/*,application/pdf">
+                    <input type="file" accept="image/*,application/pdf" id="file-upload-2">
                     <img src="images/upload_icon.png" alt="Upload Icon">
                     <p>Upload</p>
                 </label>
-                <br>
                 <p class="file-size">Maximum Upload File Size: <span>128MB</span></p>
             </div>
-            <br>
-            <button class="submit-btn">Submit</button>
-        </section>       
+        
+            <button class="submit-btn" id="submit-issue">Submit</button>
+        
+            <p id="confirmation-message" style="display:none; color: green; font-weight: bold;">
+                ✅ Your issue has been submitted. Our team will resolve it as soon as possible.
+            </p>
+        </section>
+        
+        <script>
+            document.getElementById("submit-issue").addEventListener("click", function() {
+                let issueDescription = document.getElementById("issue-description").value;
+                
+                if (issueDescription.trim() === "") {
+                    alert("Please describe your issue before submitting.");
+                    return;
+                }
+        
+                document.getElementById("confirmation-message").style.display = "block";
+        
+                // Here, you can send the data to your backend via an API request
+                console.log("Issue submitted:", issueDescription);
+            });
+        </script>
+        
+        
+
         </section>
         </div>
     </main>
