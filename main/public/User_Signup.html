@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Services - Sign Up</title>
     <link rel="stylesheet" href="User_Signup.css">
+    <script type="module" src="User_Signup.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -22,23 +23,23 @@
                 <span>Or sign up with email</span>
             </div>
 
-            <form>
+            <form action="#">
                 <div class="form-group">
                     <label for="fullname">Full name</label>
-                    <input type="text" id="fullname" placeholder="Enter your full name" required>
+                    <input type="text" id="fullname" placeholder="Enter your full name"required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter email address" required>
+                    <input type="email" id="email" placeholder="Enter email address"required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required>
+                    <input type="password" id="password" placeholder="Enter password"required>
                 </div>
 
-                    <button type="submit" class="continue-btn">Sign Up</button>
+                    <button type="submit"class="continue-btn" id="signup">Sign Up</button>
             </form>
 
             <div class="login-link">
@@ -55,31 +56,5 @@
             <img src="images/LOGIN PAGE1.png" alt="Service professional at work">
         </div>
     </div>
-
-    <script>
-        async function registerUser(event) {
-            event.preventDefault();
-            
-            const fullname = document.getElementById("fullname").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            const response = await fetch("http://localhost:5000/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ fullname, email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert("Registration successful! Please login.");
-                window.location.href = "login_page.html";
-            } else {
-                alert(data.msg);
-            }
-        }
-    </script>
-
 </body>
 </html>
