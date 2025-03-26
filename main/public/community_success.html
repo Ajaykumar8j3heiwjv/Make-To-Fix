@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" href="community_success.css">
+</head>
+<body>
+    <div class="popup">
+        <div class="popup-header">
+            <img src="images/rgister_logo.png" alt="Logo" class="logo">
+            <p>Congratulations! Registered Successfully</p>
+            <button class="close-btn" onclick="closePopup()">×</button>
+        </div>
+
+        <div class="popup-body">
+            <img src="images/success_22.jpg" alt="Success Icon" class="success-icon">
+            <h2>Registered Successfully</h2>
+            <p class="invite-text">Invite members via</p>
+
+            <div class="social-icons">
+                <div class="icon">
+                    <img src="images/copylink_success.jpg" alt="Copy Link">
+                    <p>Copy link</p>
+                </div>
+                <div class="icon">
+                    <img src="images/whatsapp_success.jpg" alt="WhatsApp">
+                    <p>WhatsApp</p>
+                </div>
+                <div class="icon">
+                    <img src="images/gmail_success.jpg" alt="Mail">
+                    <p>Mail</p>
+                </div>
+                <div class="icon">
+                    <img src="images/facebook_success.jpg" alt="Facebook">
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
