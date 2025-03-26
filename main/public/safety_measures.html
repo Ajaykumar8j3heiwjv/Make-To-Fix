@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFETY MEASURES </title>
+    <link rel="stylesheet" href="home_page.css">
+    <link rel="stylesheet" href="home_page1.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/icon type">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins;
+           
+        }
+
+        :root {
+            --primary-blue: #000066;
+            --text-light: #ffffff;
+        }
+
+        .navbar {
+            background-color: var(--primary-blue);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .hero {
+            display: grid;
+            padding: 0;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            height: 100%;
+            background: #f5f5f5;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-top: 2rem;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .hero-content .highlight {
+            color: blue;
+        }
+
+        /* .hero-image {
+            background-image: url('#Aus.jpg');
+            background-size: cover;
+            background-position: center;
+            
+            opacity: 0.80;
+        } */
+
+        .hero-image img {
+            display: flex;
+            width: 900px;
+            height: 600px;
+        }
+
+        .section {
+            padding: 3rem 2rem;
+        }
+
+        .section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 4rem;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+        }
+
+        /* faq */
+
+        .faq {
+            padding: 20px;
+        }
+
+        .faq h2 {
+            color: blue;
+            text-align: left;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            font-size: 1em;
+            text-align: left;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+        }
+
+        .faq-answer img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+
+
+        .footer {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        
+        .social-links img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .reviewer-img{
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="main1.html"><img src="images/logo.png" alt="M2F Logo"></a>
+                <h1>Make To Fix</h1>
+            </div>
+            
+            <button class="mobile-menu" aria-label="Toggle Menu">
+                <span>English</span>
+                <span>Tamil</span>
+                <span>Spanish</span>
+            </button>
+
+            <div class="nav-items">
+                <ul class="nav-links">
+                    <li><a href="main1.html" class="active">Home</a></li>
+                    <li><a href="Aboutus.html">About us</a></li>
+                    <li><a href="cart1.html">Cart</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <div class="language-selector">
+                        <span>🌐</span>
+                        <select class="language">
+                            <option value="en">English</option>
+                            <option value="ta">Tamil</option>
+                            <option value="tl">Telugu</option>
+                            <option value="Ma">malayalam</option>
+                        </select>
+                    </div>
+                    <div class="viewer">
+                        <img src="images/profile_img2.png" alt="reviewer" class="reviewer-img">
+                        <div class="reviewer-user">
+                            <p class="user-name">Fonalosa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Make your day fix with <span class="highlight">M2F</span> and keep connected</h1>
+            <p>"User satisfaction is our first priority and top most order for the services partner"</p>
+            </div>
+         <div class="hero-image"><img src="images/safety_measures.png" alt="aboutus image"></div> 
+    </section>
+    
+
+    <section class="section">
+        <h2>Our Safety Measures </h2>
+        <p>Our M2F home services website must prioritize safety to build trust and ensure a secure experience for users. Key measures include thorough background checks and vetting of service providers, ensuring they are qualified and trustworthy.</p>
+        <br>
+        <p>Secure payment gateways with encryption protect users' financial information, while anonymized communication safeguards personal details. Features like real-time tracking, emergency support options, and a 24/7 helpline enhance transparency and security.</p>
+        <br>
+        <p>Additionally, adherence to health and hygiene protocols, especially for in-home services, is crucial. Clear policies for refunds, cancellations, and liability, along with verified customer reviews, further reinforce a reliable and safe platform for connecting customers with service professionals.</p>
+   </section>
+
+    <section class="section">
+        <h2>People also Ask?</h2>
+        <div class="faq-item">
+            <button class="faq-question">What Are Background Checks for Service Providers?</button>
+            <div class="faq-answer">
+                <p>Comprehensive verification of the identity, qualifications, and criminal history of service providers. To ensure that only trustworthy and skilled professionals are hired, providing customers peace of mind.</p>
+                <!--<img src="#images/safety_measures1.png" alt="Background check process"> -->
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What Are Secure Payment Systems?</button>
+            <div class="faq-answer">
+                <p>Secure payment methods with encryption to protect financial details.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What Are Real-Time Tracking?</button>
+            <div class="faq-answer">
+                <p>Live tracking system for better transparency and efficiency.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What Are Emergency Support Options?</button>
+            <div class="faq-answer">
+                <p>24/7 customer support with emergency help.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What Are Hygiene and Health Protocols?</button>
+            <div class="faq-answer">
+                <p>Strict hygiene policies for safe in-home services.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What Are Insurance Coverage?</button>
+            <div class="faq-answer">
+                <p>Insurance policies for service-related risks.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    
+
+    
+    <footer>
+        <div class="footer-container">
+            <!-- Company Info Section -->
+            <div class="company-info">
+                <div class="logo">
+                    <a href="main1.html"><img src="images/logo.png" alt="M2F Logo"></a>
+                    <h2>M2F</h2>
+                </div>
+                <p>your trusted partner for all your home service needs with quality workmanship, and customer satisfaction</p>
+                <h3>Contact Us</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Chennai ,Tamilnadu,India</p>
+                    <p><i class="fas fa-envelope"></i> Make2Fix@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 63807 65665</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/p/C9AQpe_yyBK/"><i class="fab fa-instagram"><img src="images/Instagram.png"></i></a>
+                    <a href="https://www.linkedin.com/in/skajaykumar/"><i class="fab fa-linkedin"><img src="images/Linkedin.png"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"><img src="images/Facebook.png"></i></a>
+                    <a href="#"><i class="fab fa-twitter"><img src="images/X.png"></i></a>
+                    <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"><img src="images/whatsapp.png"></i></a>
+                </div>
+            </div>
+
+            <!-- For User Section -->
+            <div class="footer-section">
+                <h3>For User</h3>
+                <ul>
+                    <li>Process flow</li>
+                    <li>Ratings</li>
+                    <li>Support team</li>
+                    <li>Feedback</li>
+                    <li>Update</li>
+                    <li>Monitoring</li>
+                    <li>Bills</li>
+                </ul>
+            </div>
+
+            <!-- For Partner Section -->
+            <div class="footer-section">
+                <h3>For Partner</h3>
+                <ul>
+                    <li>Support team</li>
+                    <li>User ratings</li>
+                    <li>Feedback</li>
+                    <li>Ratings (user)</li>
+                    <li>Pay out query</li>
+                    <li>Change no.</li>
+                </ul>
+            </div>
+
+            <!-- Company Section -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li>About us</li>
+                    <li>Terms & conditions</li>
+                    <li>Privacy policy</li>
+                    <li>Careers</li>
+                    <li>M2F impact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2025 M2F. All right reserved</p>
+        </div>
+    </footer>
+   
+</body>
+</html>
