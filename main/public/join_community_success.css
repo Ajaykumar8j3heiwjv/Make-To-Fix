@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url('images/register_background community.jpg');
+    background-position: center top;
+    background-size: 1100px 1800px;
+    background-repeat: no-repeat;
+   
+}
+
+.popup {
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo {
+    width: 60px;
+}
+
+.popup-header p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup-body {
+    padding: 20px 0;
+}
+
+.success-icon {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.invite-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    text-align: center;
+}
+
+.icon img {
+    width: 40px;
+}
+
+.icon p {
+    font-size: 12px;
+    margin-top: 5px;
+}
