@@ -195,6 +195,8 @@ body {
     margin-top: auto;
     list-style: none;
     padding: 0;
+    text-decoration: none;
+    color: white;
 }
 
 .bottom-links li {
