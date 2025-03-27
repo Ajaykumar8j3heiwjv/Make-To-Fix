@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.querySelector(".close-btn");
     const phoneInput = document.getElementById("phoneNumber");
     const verifyBtn = document.querySelector(".verify-btn");
+    const cartCountElement = document.querySelector(".cart-count"); // Select cart count element
+    const storedCartCount = localStorage.getItem("cartCount") || "0";
+    cartCountElement.textContent = storedCartCount; // Display stored cart count
 
     // Quantity Controls
     const quantityElement = document.querySelector(".quantity-control span");

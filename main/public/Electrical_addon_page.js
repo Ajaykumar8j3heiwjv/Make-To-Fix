@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize cart with persisted data
   const cart = JSON.parse(localStorage.getItem("cart")) || []
+  const cartCountElement = document.querySelector(".cart-count");
 
   // Load audio files
   function playSound(src) {
@@ -34,9 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const addButtons = document.querySelectorAll(".add-btn")
   addButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      const card = this.closest(".product-card")
-      const name = card.querySelector("p").textContent
-      const price = card.querySelector(".price").textContent
+      const card = this.closest(".product-card");
+      const name = card.querySelector("p").textContent;
+      const price = card.querySelector(".price").textContent;
+      const image = card.querySelector("img").src;  // Get the image URL
 
       const existingItemIndex = cart.findIndex((item) => item.name === name)
 
@@ -44,16 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
         // Item exists in cart, remove it
         cart.splice(existingItemIndex, 1)
         this.textContent = "+ ADD"
-        playSound("mixkit-interface-option-select-2573.wav")
+        playSound("mouse-remove.mp3")
         this.classList.remove("in-cart")
         showNotification(`Removed ${name} from cart`)
 
       } else {
         // Item doesn't exist in cart, add it
-        cart.push({ name, price })
+        cart.push({ name, price,image })
         this.textContent = "Remove"
         this.classList.add("in-cart")
-        playSound("mixkit-gaming-lock-2848.wav")
+        playSound("mouse-click-sound-233951.mp3")
         showNotification(`Added ${name} to cart`)
       }
 

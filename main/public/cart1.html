@@ -70,7 +70,7 @@
                 <a href="transaction details.html"><li>Transaction History</li></a>
                 <a href="Service status.html"><li>Service Status</li></a>
                 <a href="cart1.html"><li class="active">Cart <span class="cart-badge">2</span></li></a>
-                <a href="#"><li>Service Bills</li></a>
+                <a href="Service bill.html"><li>Service Bills</li></a>
                 <li class="category-title">Categories</li>
                 <a href="Electrical_addon_page.html"><li>Electricity Works</li></a>
                 <a href="Appliance_addon_page.html"><li>Appliance Repair</li></a>
@@ -82,8 +82,8 @@
             </ul>
 
             <div class="bottom-links">
-                <li>🚪 Logout</li>
-                <li>❓ Help Center</li>
+                <a href="logout.html"><li>🚪 Logout</li></a>            
+                <a href="help_center.html"><li>❓ Help Center</li></a>
             </div>
         </aside>
 
@@ -129,13 +129,16 @@
                     <br>
                     <div class="added-items">
                         <div class="item">
-                            <img src="hair color.png" alt="Hair Color">
+                            <img src="images/hair_colour.png" alt="Hair Color">
                             <p>Hair colour/henned (only application) ₹399</p>
                             <button>Add</button>
                         </div>
                         <div class="item">
-                            <img src="sara hair style.jpg" alt="Sara Fruit Facial">
+                            <img src="images/facial.png" alt="Sara Fruit Facial">
                             <p>Sara fruit facial ₹299</p>
+                            <br>
+                            <br>
+                            <br>
                             <button>Add</button>
                         </div>
                     </div>
@@ -269,34 +272,43 @@
     <script src="Electrical_addon_page.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        function displayCartItems() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const itemTotalContainer = document.getElementById('item-total');
-            const totalAmountContainer = document.getElementById('total-amount');
-            const amountToPayContainer = document.getElementById('amount-to-pay');
+    function displayCartItems() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const itemTotalContainer = document.getElementById('item-total');
+        const totalAmountContainer = document.getElementById('total-amount');
+        const amountToPayContainer = document.getElementById('amount-to-pay');
+        
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItemsContainer.innerHTML = '';
+        let totalPrice = 0;
+
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
             
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cartItemsContainer.innerHTML = '';
-            let totalPrice = 0;
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                <div class="cart-item-details">
+                    <p class="cart-item-name">${item.name}</p>
+                    <p class="cart-item-price">${item.price}</p>
+                </div>
+            `;
+            
+            cartItemsContainer.appendChild(itemElement);
+            totalPrice += parseInt(item.price.replace('₹', ''));
+        });
 
-            cart.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'cart-item';
-                itemElement.innerHTML = `<p>${item.name}</p><p>${item.price}</p>`;
-                cartItemsContainer.appendChild(itemElement);
-                totalPrice += parseInt(item.price.replace('₹', ''));
-            });
+        itemTotalContainer.textContent = `₹${totalPrice}`;
+        totalAmountContainer.textContent = `₹${totalPrice + 59 - 28}`; // Assuming a fixed tax/fee of 59
+        amountToPayContainer.textContent = `₹${totalPrice + 59 - 28}`;
+    }
 
-            itemTotalContainer.textContent = `₹${totalPrice}`;
-            totalAmountContainer.textContent = `₹${totalPrice + 59 - 28}`; // Assuming a fixed tax/fee of 59
-            amountToPayContainer.textContent = `₹${totalPrice + 59 - 28}`;
-        }
+    displayCartItems();
 
-        displayCartItems();
+    // Update cart when the page is shown (in case it was updated in another tab)
+    window.addEventListener('pageshow', displayCartItems);
+});
 
-        // Update cart when the page is shown (in case it was updated in another tab)
-        window.addEventListener('pageshow', displayCartItems);
-    });
 </script>
 </body>
 </html>

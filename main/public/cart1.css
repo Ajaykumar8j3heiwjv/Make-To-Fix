@@ -170,6 +170,11 @@ body {
     padding: 0;
 }
 
+.bottom-links a{
+    text-decoration: none;
+    color: white;
+}
+
 .bottom-links li {
     padding: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -227,6 +232,14 @@ body {
     border-radius:8px;
 }
 
+.cart-item img {
+    width: 80px;  /* Adjust width */
+    height: 80px; /* Adjust height */
+    object-fit: cover; /* Ensures the image is cropped properly */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-right: 10px; /* Space between image and text */
+}
+
 #cart-items {
     display: grid;
     padding-top: 20px;
@@ -255,7 +268,7 @@ body {
     border: none;
     padding: 5px 10px;
     margin: 0 5px;
-    space-between: 5px;
+    /* space-between: 5px; */
     cursor: pointer;
 }
 .quantity-control span{
