@@ -120,10 +120,12 @@
         <h1>Complete your registration</h1>
         <p class="subtitle">To continue & access our service you must complete your registration</p>
         
-<form action="#" method="GET">
+<form action="#" method="GET" id="registration-form">
+
 
             <div class="form-group">
-                <input type="text" placeholder="Enter your full name" required>
+                <input type="text" class="user-name" placeholder="Enter your full name" required id="full-name">
+
             </div>
             
             <div class="form-group">
@@ -205,7 +207,10 @@
                         const reader = new FileReader();
                         reader.onload = function(e) {
                             localStorage.setItem('uploadedImage', e.target.result); // Store image in local storage
-                            window.location.href = 'main1.html'; // Redirect to main1.html
+                const fullName = document.getElementById('full-name').value;
+                localStorage.setItem('userName', fullName); // Store the user's name in local storage
+                window.location.href = 'main1.html'; // Redirect to main1.html
+
                         };
                         reader.readAsDataURL(inputFile.files[0]); // Read the uploaded file
                     }
