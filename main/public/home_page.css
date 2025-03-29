@@ -89,6 +89,14 @@ body {
     background-color:var(--black);
 }
 
+#profile-picture {
+    width: 50px; /* Set width */
+    height: 50px; /* Set height */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure the image covers the area */
+    margin-right: 10px; /* Space between image and username */
+  }
+  
 .btn-login, .btn-signup {
     padding: 0.5rem 1rem;
     border-radius: 4px;
