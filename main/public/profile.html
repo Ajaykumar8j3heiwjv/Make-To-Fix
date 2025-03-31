@@ -32,11 +32,35 @@
                     </select>
                 </div>
                 <div class="viewer">
-                    <img src="images/profile_img2.png" alt="reviewer" class="reviewer-img">
-                    <div class="reviewer-user">
-                        <p class="user-name">Fonolosa</p>
-                    </div>
-                </div>
+                    <a href="profile.html">
+                      <img
+                        src="profile.jpg"
+                        alt="Profile-Picture"
+                        id="profile-picture"
+                      />
+      
+                      <script>
+                        window.onload = function () {
+                          const uploadedImage = localStorage.getItem("uploadedImage");
+                          if (uploadedImage) {
+                            const profilePicture =
+                              document.getElementById("profile-picture");
+                            profilePicture.src = uploadedImage; // Set the uploaded image as the source for the profile picture
+                          }
+                          const userName = localStorage.getItem("userName"); // Retrieve the user's name from local storage
+                          if (userName) {
+                            const displayUserName =
+                              document.getElementById("display-user-name");
+                            displayUserName.textContent = userName; // Display the user's name
+      
+                          }
+                        };
+                      </script>
+                      <div class="reviewer-user">
+                        <p class="user-name" id="display-user-name">Ajay</p>
+                      </div>
+                    </a>
+                  </div>
             </div>
         </div>
     </nav>
@@ -142,7 +166,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><label>Premiership</label></td>
+                        <td><label>Pro Membership</label></td>
                         <td>
                             <input type="text" value="Gold" disabled>
                         </td>

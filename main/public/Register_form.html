@@ -120,9 +120,12 @@
         <h1>Complete your registration</h1>
         <p class="subtitle">To continue & access our service you must complete your registration</p>
         
-        <form action="success.html" method="GET">
+<form action="#" method="GET" id="registration-form">
+
+
             <div class="form-group">
-                <input type="text" placeholder="Enter your full name" required>
+                <input type="text" class="user-name" placeholder="Enter your full name" required id="full-name">
+
             </div>
             
             <div class="form-group">
@@ -188,13 +191,38 @@
                     <option value="1">Tamilnadu</option>
                 </select>
             </div>
+                <input type="file" id="Upload-image" name="profile-picture" accept="image/*">
+            <div>
+
+            </div>
             
             <button type="submit" class="submit-button">Complete Registration</button>
+            <script>
+                const form = document.querySelector('form');
+                const inputFile = document.getElementById("Upload-image");
+
+                form.onsubmit = function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    if (inputFile.files && inputFile.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            localStorage.setItem('uploadedImage', e.target.result); // Store image in local storage
+                const fullName = document.getElementById('full-name').value;
+                localStorage.setItem('userName', fullName); // Store the user's name in local storage
+                window.location.href = 'main1.html'; // Redirect to main1.html
+
+                        };
+                        reader.readAsDataURL(inputFile.files[0]); // Read the uploaded file
+                    }
+                };
+            </script>
+
             
             <p class="terms">
                 By continuing the request you agree to our <a href="Terms & condition.html">Terms of Service <span class="terms"> and </span>Privacy Policy</a>
             </p>
         </form>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

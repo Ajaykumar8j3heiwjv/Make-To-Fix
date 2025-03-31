@@ -30,11 +30,35 @@
                     </select>
                 </div>
                 <div class="viewer">
-                    <img src="images/profile_img2.png" alt="reviewer" class="reviewer-img">
-                    <div class="reviewer-user">
-                        <p class="user-name">Fonolosa</p>
-                    </div>
-                </div>
+                    <a href="profile.html">
+                      <img
+                        src="profile.jpg"
+                        alt="Profile-Picture"
+                        id="profile-picture"
+                      />
+      
+                      <script>
+                        window.onload = function () {
+                          const uploadedImage = localStorage.getItem("uploadedImage");
+                          if (uploadedImage) {
+                            const profilePicture =
+                              document.getElementById("profile-picture");
+                            profilePicture.src = uploadedImage; // Set the uploaded image as the source for the profile picture
+                          }
+                          const userName = localStorage.getItem("userName"); // Retrieve the user's name from local storage
+                          if (userName) {
+                            const displayUserName =
+                              document.getElementById("display-user-name");
+                            displayUserName.textContent = userName; // Display the user's name
+      
+                          }
+                        };
+                      </script>
+                      <div class="reviewer-user">
+                        <p class="user-name" id="display-user-name">Ajay</p>
+                      </div>
+                    </a>
+                  </div>
             </div>
         </div>
     </nav>
@@ -88,7 +112,7 @@
             <h1>Appliance <span class="highlight">Services</span></h1>
 
             <div class="hero-section">
-                <img src="images/Applinace_service_images/Applinace_service_image.png" alt="Electrician at work">
+                <img src="images/Applinace_service_images/Appliance_service_image.png" alt="Electrician at work">
                 <div class="hero-text">
                     <h3>Overview</h3>
                     <p>These services can include: on-site repairs, preventive maintenance, 
