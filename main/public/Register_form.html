@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,9 +48,7 @@
         }
 
         .logo {
-           
             background-color: #000080;
-        
             border-radius: 8px;
             margin-bottom: 1rem;
         }
@@ -108,7 +105,6 @@
             color: #000080;
             text-decoration: none;
         }
-       
     </style>
 </head>
 <body>
@@ -120,12 +116,9 @@
         <h1>Complete your registration</h1>
         <p class="subtitle">To continue & access our service you must complete your registration</p>
         
-<form action="#" method="GET" id="registration-form">
-
-
+        <form action="#" method="GET" id="registration-form">
             <div class="form-group">
                 <input type="text" class="user-name" placeholder="Enter your full name" required id="full-name">
-
             </div>
             
             <div class="form-group">
@@ -191,10 +184,8 @@
                     <option value="1">Tamilnadu</option>
                 </select>
             </div>
-                <input type="file" id="Upload-image" name="profile-picture" accept="image/*">
-            <div>
-
-            </div>
+            <input type="file" id="Upload-image" name="profile-picture" accept="image/*">
+            <div></div>
             
             <button type="submit" class="submit-button">Complete Registration</button>
             <script>
@@ -207,17 +198,17 @@
                         const reader = new FileReader();
                         reader.onload = function(e) {
                             localStorage.setItem('uploadedImage', e.target.result); // Store image in local storage
-                const fullName = document.getElementById('full-name').value;
-                localStorage.setItem('userName', fullName); // Store the user's name in local storage
-                window.location.href = 'main1.html'; // Redirect to main1.html
-
+                            const fullName = document.getElementById('full-name').value;
+                            console.log("Full Name:", fullName); // Debugging line to check the full name
+                            console.log("Uploaded Image:", e.target.result); // Debugging line to check the uploaded image
+                            localStorage.setItem('userName', fullName); // Store the user's name in local storage
+                            window.location.href = 'main1.html'; // Redirect to main1.html
                         };
                         reader.readAsDataURL(inputFile.files[0]); // Read the uploaded file
                     }
                 };
             </script>
 
-            
             <p class="terms">
                 By continuing the request you agree to our <a href="Terms & condition.html">Terms of Service <span class="terms"> and </span>Privacy Policy</a>
             </p>

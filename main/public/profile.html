@@ -38,21 +38,17 @@
                         alt="Profile-Picture"
                         id="profile-picture"
                       />
-      
                       <script>
                         window.onload = function () {
                           const uploadedImage = localStorage.getItem("uploadedImage");
                           if (uploadedImage) {
-                            const profilePicture =
-                              document.getElementById("profile-picture");
+                            const profilePicture = document.getElementById("profile-picture");
                             profilePicture.src = uploadedImage; // Set the uploaded image as the source for the profile picture
                           }
                           const userName = localStorage.getItem("userName"); // Retrieve the user's name from local storage
                           if (userName) {
-                            const displayUserName =
-                              document.getElementById("display-user-name");
+                            const displayUserName = document.getElementById("display-user-name");
                             displayUserName.textContent = userName; // Display the user's name
-      
                           }
                         };
                       </script>
@@ -103,11 +99,10 @@
             </ul>
 
             <div class="bottom-links">
-                <a href="logout.html"> <li>❓Logout </li> </a>
+                <a href="logout.html"> <li>🚪Logout </li> </a>
                 <a href="help_center.html"> <li>❓ Help Center</li> </a>
             </div>
         </aside>
-
 
         <!-- Profile Section -->
         <section class="profile">
@@ -116,7 +111,23 @@
             <br>
 
             <div class="profile-pic">
-                <img src="images/profile_img2.png" alt="User Profile">
+                <img src="images/profile_img2.png" alt="User Profile" id="profile-image">
+
+                <script>
+                    window.onload = function () {
+                          const uploadedImage = localStorage.getItem("uploadedImage");
+                          console.log("Uploaded Image:", uploadedImage); // Debugging line to check the uploaded image
+                          if (uploadedImage) {
+                            const profilePicture =
+                              document.getElementById("profile-image");
+                            profilePicture.src = uploadedImage; // Set the uploaded image as the source for the profile picture
+                          }
+
+
+
+                    }
+                </script>
+
             </div>
             <br>
             <br>

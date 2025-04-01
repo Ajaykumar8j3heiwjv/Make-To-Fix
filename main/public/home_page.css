@@ -42,7 +42,7 @@ body {
     align-content: center;
     font-family: Poppins;  
     margin-left: 10px;
-    Space-around:40px;  
+    justify-content: space-between;  
 }
 
 .nav-items {
@@ -96,7 +96,7 @@ body {
     object-fit: cover; /* Ensure the image covers the area */
     margin-right: 10px; /* Space between image and username */
   }
-  
+
 .btn-login, .btn-signup {
     padding: 0.5rem 1rem;
     border-radius: 4px;
