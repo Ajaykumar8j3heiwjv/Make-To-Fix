@@ -38,24 +38,6 @@
                         alt="Profile-Picture"
                         id="profile-picture"
                       />
-      
-                      <script>
-                        window.onload = function () {
-                          const uploadedImage = localStorage.getItem("uploadedImage");
-                          if (uploadedImage) {
-                            const profilePicture =
-                              document.getElementById("profile-picture");
-                            profilePicture.src = uploadedImage; // Set the uploaded image as the source for the profile picture
-                          }
-                          const userName = localStorage.getItem("userName"); // Retrieve the user's name from local storage
-                          if (userName) {
-                            const displayUserName =
-                              document.getElementById("display-user-name");
-                            displayUserName.textContent = userName; // Display the user's name
-      
-                          }
-                        };
-                      </script>
                       <div class="reviewer-user">
                         <p class="user-name" id="display-user-name">Ajay</p>
                       </div>
@@ -116,7 +98,7 @@
             <br>
 
             <div class="profile-pic">
-                <img src="images/profile_img2.png" alt="User Profile">
+                <img src="images/profile_img2.png" alt="User Profile" id="profile-image">
             </div>
             <br>
             <br>
@@ -353,6 +335,23 @@
             <p>2025 M2F. All right reserved</p>
         </div> 
     </footer>
+    <script>
+        window.onload = function () {
+            const uploadedImage = localStorage.getItem("uploadedImage");
+            if (uploadedImage) {
+                // Update both profile images
+                const navProfilePic = document.getElementById("profile-picture");
+                const mainProfilePic = document.getElementById("profile-image");
+                if (navProfilePic) navProfilePic.src = uploadedImage;
+                if (mainProfilePic) mainProfilePic.src = uploadedImage;
+            }
+            const userName = localStorage.getItem("userName");
+            if (userName) {
+                const displayUserName = document.getElementById("display-user-name");
+                displayUserName.textContent = userName;
+            }
+        };
+    </script>
     <script src="profile.js"> </script>
 </body>
 </html>

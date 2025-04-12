@@ -138,7 +138,7 @@ body {
     cursor: pointer;
 }
 
-.nav-links a {
+#nav-links a {
     text-decoration:none;
 }
 

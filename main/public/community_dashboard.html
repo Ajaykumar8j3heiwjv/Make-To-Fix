@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      padding: 30px;
+    }
+    .dashboard {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+    .dashboard h2 {
+      text-align: center;
+      color: #444;
+    }
+    .data-item {
+      margin: 10px 0;
+    }
+    .data-item strong {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2>🎉 Community Registered Successfully!</h2>
+    <div class="data-item"><strong>Name:</strong> <span id="name"></span></div>
+    <div class="data-item"><strong>Email:</strong> <span id="email"></span></div>
+    <div class="data-item"><strong>Phone:</strong> <span id="phone"></span></div>
+    <div class="data-item"><strong>Address:</strong> <span id="address"></span></div>
+    <div class="data-item"><strong>Landmark:</strong> <span id="landmark"></span></div>
+    <div class="data-item"><strong>District:</strong> <span id="district"></span></div>
+    <div class="data-item"><strong>State:</strong> <span id="state"></span></div>
+    <div class="data-item"><strong>Community Name:</strong> <span id="communityName"></span></div>
+  </div>
+
+  <script>
+    // Load the data from localStorage
+    document.getElementById('name').innerText = localStorage.getItem('name');
+    document.getElementById('email').innerText = localStorage.getItem('email');
+    document.getElementById('phone').innerText = localStorage.getItem('phone');
+    document.getElementById('address').innerText = localStorage.getItem('address');
+    document.getElementById('landmark').innerText = localStorage.getItem('landmark') ||"N/A";
+    document.getElementById('district').innerText = localStorage.getItem('district');
+    document.getElementById('state').innerText = localStorage.getItem('state');
+    document.getElementById('communityName').innerText = localStorage.getItem('communityName');
+  </script>
+</body>
+</html>

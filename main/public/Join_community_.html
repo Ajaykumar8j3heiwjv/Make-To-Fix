@@ -1,109 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Community</title>
-    <style>
-    
-       
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Community</title>
+  <link rel="stylesheet" href="Join_community.css">
 </head>
 <body>
-    <link rel="stylesheet" href="Join_community.css">
-    <div class="form-container">
-        <button class="close-button">&times;</button>
-        <div class="logo"></div>
-        <img src="images/rgister_logo.png" width="50px" height="50px">
-       
-        <h1>Join Community</h1>
-        <p class="subtitle">To continue & access our service you must complete your KYC</p>
-        
-        <form>
-            <div class="form-group">
-                <input type="text" placeholder="Enter your full name" required>
-            </div>
-            
-            <div class="form-group">
-                <input type="email" placeholder="Enter your email address" required>
-            </div>
-            
-            <div class="form-group">
-                <input type="tel" placeholder="Enter your phone number" required>
-            </div>
-            
-           
-            <div class="form-group">
-                <input type="text" placeholder="Enter your Current address" required>
-            </div>
-            
-            
-            <div class="form-group">
-                <input type="text" placeholder="Enter your Current address landmark" required>
-            </div>
-            
-            <div class="form-group">
-                <select required>
-                    <option value="1" disabled selected>Select District</option>
-                    <option value="2">Ariyalur</option>
-                    <option value="3">Chengalpattu</option>
-                    <option value="4">Chennai</option>
-                    <option value="5">Coimbatore</option>
-                    <option value="6">Cuddalore</option>
-                    <option value="7">Dharmapuri</option>
-                    <option value="8">Dindigul</option>
-                    <option value="9">Erode</option>
-                    <option value="10">kallakurichi</option>
-                    <option value="11">Kancheepuram</option>
-                    <option value="12">Karur</option>
-                    <option value="13">Krishnagiri</option>
-                    <option value="14">Madurai</option>
-                    <option value="15">Mayiladuthurai</option>
-                    <option value="16">Nagapattinam</option>
-                    <option value="17">kanniyakumari</option>
-                    <option value="18">Namakkal</option>
-                    <option value="19">Nilgiris</option>
-                    <option value="20">Perambalur</option>
-                    <option value="21">Pudukottai</option>
-                    <option value="22">Ramanathapuram</option>
-                    <option value="23">Raniprt</option>
-                    <option value="24">Salem</option>
-                    <option value="25">Sivagangai</option>
-                    <option value="26">Tenkasi</option>
-                    <option value="27">Thanjavur</option>
-                    <option value="28">Theni</option>
-                    <option value="29">Thiruvallur</option>
-                    <option value="30">Thiruvarur</option>
-                    <option value="31">Thoothukudi</option>
-                    <option value="32">Tiruchirappalli</option>
-                    <option value="33">Tirunelveli</option>
-                    <option value="34">Vellore</option>
-                    <option value="35">Viluppuram</option>
-                    <option value="36">Virudhunagar</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <select required>
-                    <option value="" disabled selected>Select State</option>
-                    <option> Tamilnadu</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <select required>
-                    <option value="" disabled selected>Search Community</option>
-                    <option> M2F </option>
-                    <option> M3F </option>
-                </select>
-            </div>
-            
-            <a href="join_community_success.html"> <button type="button" class="submit-button">Join Community</button> </a>
-            
-            <p class="terms">
-                By continuing the request you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-            </p>
-        </form>
-    </div>
+  <div class="form-container">
+    <button class="close-button">&times;</button>
+    <div class="logo"></div>
+    <img src="images/rgister_logo.png" width="50px" height="50px">
+
+    <h1>Join Community</h1>
+    <p class="subtitle">To continue & access our service you must complete your KYC</p>
+
+    <form id="joinForm">
+      <div class="form-group">
+        <input type="text" id="fullname" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Enter your email address" required>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="currentAddress" placeholder="Enter your Current address" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="landmark" placeholder="Enter your Current address landmark" required>
+      </div>
+
+      <div class="form-group">
+        <select id="district" required>
+          <option value="" disabled selected>Select District</option>
+          <option>Ariyalur</option>
+          <option>Chengalpattu</option>
+          <option>Chennai</option>
+          <option>Coimbatore</option>
+          <option>Cuddalore</option>
+          <option>Dharmapuri</option>
+          <option>Dindigul</option>
+          <option>Erode</option>
+          <option>kallakurichi</option>
+          <option>Kancheepuram</option>
+          <option>Karur</option>
+          <option>Krishnagiri</option>
+          <option>Madurai</option>
+          <option>Mayiladuthurai</option>
+          <option>Nagapattinam</option>
+          <option>kanniyakumari</option>
+          <option>Namakkal</option>
+          <option>Nilgiris</option>
+          <option>Perambalur</option>
+          <option>Pudukottai</option>
+          <option>Ramanathapuram</option>
+          <option>Raniprt</option>
+          <option>Salem</option>
+          <option>Sivagangai</option>
+          <option>Tenkasi</option>
+          <option>Thanjavur</option>
+          <option>Theni</option>
+          <option>Thiruvallur</option>
+          <option>Thiruvarur</option>
+          <option>Thoothukudi</option>
+          <option>Tiruchirappalli</option>
+          <option>Tirunelveli</option>
+          <option>Vellore</option>
+          <option>Viluppuram</option>
+          <option>Virudhunagar</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select id="state" required>
+          <option value="" disabled selected>Select State</option>
+          <option>Tamil Nadu</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select id="selectedCommunity" required>
+          <option value="" disabled selected>Search Community</option>
+          <option>Casa grand</option>
+          <option>Adroit</option>
+          <option>Baashyam</option>
+          <option>ITC</option>
+          <option>Residency</option>
+        </select>
+      </div>
+
+      <a href="join_success.html">
+        <button type="button" onclick="saveData()" class="submit-button">Join Community</button>
+      </a>
+
+
+      <p class="terms">
+        By continuing the request you agree to our 
+        <a href="#">Terms of Service</a> and 
+        <a href="#">Privacy Policy</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("joinForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const joinData = {
+        type: "join",
+        fullname: document.getElementById("fullname").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        currentAddress: document.getElementById("currentAddress").value,
+        landmark: document.getElementById("landmark").value,
+        district: document.getElementById("district").value,
+        state: document.getElementById("state").value,
+        selectedCommunity: document.getElementById("selectedCommunity").value
+      };
+
+      localStorage.setItem("joinCommunityInfo", JSON.stringify(joinData));
+      window.location.href = "join-community-module.html";
+    });
+  </script>
+  <script>
+    function saveData() {
+    localStorage.setItem("name", document.querySelector("input[placeholder='Enter your full name']").value);
+    localStorage.setItem("email", document.querySelector("input[placeholder='Enter your email address']").value);
+    localStorage.setItem("phone", document.querySelector("input[placeholder='Enter your phone number']").value);
+    localStorage.setItem("address", document.querySelector("input[placeholder*='Current address']").value);
+    localStorage.setItem("landmark", document.querySelector("input[placeholder*='landmark']").value);
+    localStorage.setItem("district", document.getElementById("district").value);
+    localStorage.setItem("state", document.getElementById("state").value);
+    localStorage.setItem("communityName", document.getElementById("selectedCommunity").value);
+  }
+  </script>
+  
 </body>
 </html>

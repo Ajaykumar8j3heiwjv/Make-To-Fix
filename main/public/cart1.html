@@ -42,24 +42,6 @@
                         alt="Profile-Picture"
                         id="profile-picture"
                       />
-      
-                      <script>
-                        window.onload = function () {
-                          const uploadedImage = localStorage.getItem("uploadedImage");
-                          if (uploadedImage) {
-                            const profilePicture =
-                              document.getElementById("profile-picture");
-                            profilePicture.src = uploadedImage; // Set the uploaded image as the source for the profile picture
-                          }
-                          const userName = localStorage.getItem("userName"); // Retrieve the user's name from local storage
-                          if (userName) {
-                            const displayUserName =
-                              document.getElementById("display-user-name");
-                            displayUserName.textContent = userName; // Display the user's name
-      
-                          }
-                        };
-                      </script>
                       <div class="reviewer-user">
                         <p class="user-name" id="display-user-name">Ajay</p>
                       </div>
@@ -94,7 +76,7 @@
                 <a href="service history.html"><li>Service History</li></a>
                 <a href="transaction details.html"><li>Transaction History</li></a>
                 <a href="Service status.html"><li>Service Status</li></a>
-                <a href="cart1.html"><li class="active">Cart <span class="cart-badge">2</span></li></a>
+                <a href="cart1.html"><li class="active">Cart <span class="cart-badge">New</span></li></a>
                 <a href="Service bill.html"><li>Service Bills</li></a>
                 <li class="category-title">Categories</li>
                 <a href="Electrical_addon_page.html"><li>Electricity Works</li></a>
@@ -119,7 +101,7 @@
             <br>
 
             <div class="profile-pic">
-                <img src="images/profile_img2.png" alt="User Profile">
+                <img src="images/profile_img2.png" alt="User Profile" id="profile-image">
             </div>
             <br>
             <br>
@@ -335,6 +317,24 @@
 });
 
 </script>
+<script>
+    window.onload = function () {
+        const uploadedImage = localStorage.getItem("uploadedImage");
+        if (uploadedImage) {
+            // Update both profile images
+            const navProfilePic = document.getElementById("profile-picture");
+            const mainProfilePic = document.getElementById("profile-image");
+            if (navProfilePic) navProfilePic.src = uploadedImage;
+            if (mainProfilePic) mainProfilePic.src = uploadedImage;
+        }
+        const userName = localStorage.getItem("userName");
+        if (userName) {
+            const displayUserName = document.getElementById("display-user-name");
+            displayUserName.textContent = userName;
+        }
+    };
+</script>
+<script src="profile.js"></script>
 </body>
 </html>
 
