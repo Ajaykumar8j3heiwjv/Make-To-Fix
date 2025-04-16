@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="cart1.css">
     <!-- <link rel="stylesheet" href="home_page.css"> -->
     <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href=".css">
+    <!-- <link rel="stylesheet" href="Address_change.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="images/logo.png" type="image/icon type">
 </head>
@@ -109,120 +109,69 @@
             <h2>Your <span class="highlight-text"> Cart</span></h2> 
             <br>
             <br>
-            
-            <section class="cart-container">
-                
-                <!-- Cart Details Section -->
-                <section class="cart-details" id="cart-items">
-                    <!-- Cart items will be dynamically inserted here -->
-                </section>
+            <div class="modal" id="addressModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h2>Srilingannallur</h2>
+                            <p>Srilingannallur, Adityaram Nagar, Jonaiyur,Chennai, Tamil Nadu, 600118, India</p>
+                        </div>
+                        <button class="close-btn" id="closeModalBtn">
+                            <i class='bx bx-x'></i>
+                        </button>
+                    </div>
         
-                <section class="payment-summary" >
-                    <h4>Payment summary</h4>
-                    <br>
-                    <p><span>Item Total</span> <span id="item-total">₹0</span></p>
-                    <p><span>GST Fee</span> <span>₹59</span></p>
-                    <p><span>Discount</span> <span>-₹28</span></p>
-                    <hr>
-                    <br>
-                    <p><span> Total Amount</span> <span id="total-amount">₹0</span></p>
-                    <p class="amount-to-pay"><span>Amount to pay</span> <span id="amount-to-pay">₹0</span></p>
-                    <a href><button class="pay-btn" id="pay-btn">Pay Now</button></a>
-                </section>
-            </section>
-                <section class="cart-summary">
-                    <section class="savings-box">
-                        <p>✅ You're saving Total ₹60 on this order!</p>
-                    </section>
-                    <div class="address-card">
-                        <h3>Address</h3>
-                        <p>Plot no. 8</p>
-                        <p>Velunayakkar st</p>
-                        <p>Panaiyur</p>
-                        <p>Chennai</p>
-                        <p>Pin code : 600119</p>
-                        <a href="Address_change.html"><button>Change</button></a>
-                    </div>
-                    <div class="address-card">
-                        <h3>Choose your prefred slot.</h3> 
-                        <a href="slot.html"><button>Book Slot</button></a>
-                    </div>
-
-                </section>
-            <br>
-    
-            <section class="frequently-added">
-                    <h4>Frequently added together</h4>
-                    <br>
-                    <div class="added-items">
-                        <div class="item">
-                            <img src="images/hair_colour.png" alt="Hair Color">
-                            <p>Hair colour/henned (only application) ₹399</p>
-                            <button>Add</button>
-                        </div>
-                        <div class="item">
-                            <img src="images/facial.png" alt="Sara Fruit Facial">
-                            <p>Sara fruit facial ₹299</p>
-                            <br>
-                            <br>
-                            <br>
-                            <button>Add</button>
-                        </div>
-                    </div>
-            </section>
-            <br>
-    
-                <section class="preference">
-                    <input type="checkbox" id="avoid-calling">
-                    <label for="avoid-calling">Avoid calling before reaching the location</label>
-                </section>
-                <br>
-    
-                <section class="offers">
-                    <p>💰 Coupons and offers</p>
-                    <a href="#">Login or Sign up to view offers</a>
-                </section>
-                <br>
-
-                <section class="cart-summary">
-                    <section class="savings-box">
-                        <p>✅ You're saving Total ₹60 on this order!</p>
-                    </section>
-                    <section class="login-box">
-                        <h4>Account</h4>
-                        <p>To book the service login or sign up</p>
-                        <button class="login-btn">Login</button>
-                    </section>
-                </section>
-            
-            <!-- Foreground: Phone Verification Popup -->
-            <section class="popup-section">
-                <div class="popup-overlay">
-                    <div class="popup">
-                        <span class="close-btn">&times;</span>
-                        <div class="popup-content">
-                            <div class="phone-icon">📞</div>
-                            <h2>Enter your Phone number</h2>
-                            <p>We'll send you a text with a verification code.</p>
-
-                            <!-- Phone Input Field -->
-                            <div class="phone-input">
-                                <select>
-                                    <option>+91 🇮🇳</option>
-                                    <option>+1 🇺🇸</option>
-                                    <option>+44 🇬🇧</option>
-                                    <option>+61 🇦🇺</option>
-                                </select>
-                                <input type="tel" placeholder="Phone Number" id="phoneNumber">
+                    <div class="modal-body">
+                        <!-- Map on the left -->
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62209.52011608782!2d80.1993339!3d12.9538477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525b79de7f381b%3A0xffbb2dd48afe3f1b!2sSholinganallur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1713343915!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            <div class="map-tooltip">
+                                Place the pin accurately on map
                             </div>
-                            <br>
-
-                            <button class="verify-btn" disabled>Get verification code</button>
+                            <div class="map-pin">
+                                <i class='bx bxs-map'></i>
+                            </div>
+                        </div>
+        
+                        <!-- Form on the right -->
+                        <div class="form-container">
+                            <div class="form-group">
+                                <input type="text" placeholder="House/Flat Number *" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Landmark (Optional)" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" class="form-input">
+                            </div>
+        
+                            <div class="form-group">
+                                <p>Save as</p>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="home" name="saveAs" value="home" checked>
+                                        <label for="home">Home</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="other" name="saveAs" value="other">
+                                        <label for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <a href="cart1.html"><button class="save-btn" id="saveAddressBtn">Save and proceed to slots</button></a>
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </div>
         </section>    
             
     </main>

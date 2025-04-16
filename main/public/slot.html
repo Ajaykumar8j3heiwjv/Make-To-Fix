@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking</title>
+    <link rel="stylesheet" href="slot.css">
+</head>
+<body>
+    <div class="booking-container">
+        <div class="header">
+            <div class="location-number">
+                <div class="location-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <span class="number">8</span>
+            </div>
+            <div class="close-icon">
+                <a href="cart1.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                </a>
+            </div>
+        </div>
+        <div class="divider"></div>
+        
+        <div class="content">
+            <h2 class="title">When should the professional arrive?</h2>
+            <p class="subtitle">Service will take approx.. 55 mins</p>
+            
+            <div class="date-selection">
+                <div class="date-option" data-date="13">
+                    <div class="day">Mon</div>
+                    <div class="date">13</div>
+                </div>
+                <div class="date-option" data-date="14">
+                    <div class="day">Tue</div>
+                    <div class="date">14</div>
+                </div>
+                <div class="date-option" data-date="15">
+                    <div class="day">Wed</div>
+                    <div class="date">15</div>
+                </div>
+            </div>
+            
+            <h3 class="time-title">Select start time of service</h3>
+            
+            <div class="time-grid">
+                <div class="time-option" data-time="09:00 AM">09.00 AM</div>
+                <div class="time-option selected" data-time="10:00 AM">10.00 AM</div>
+                <div class="time-option" data-time="11:00 AM">11.00 AM</div>
+                <div class="time-option" data-time="12:00 PM">12.00 PM</div>
+                <div class="time-option" data-time="01:00 PM">01.00 PM</div>
+                <div class="time-option" data-time="02:00 PM">02.00 PM</div>
+                <div class="time-option" data-time="03:00 PM">03.00 PM</div>
+                <div class="time-option" data-time="04:00 PM">04.00 PM</div>
+                <div class="time-option" data-time="05:00 PM">05.00 PM</div>
+            </div>
+            
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <script src="slot.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+/* Modal overlay */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal header */
+.modal-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-header p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-top: -5px;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.close-btn i {
+    font-size: 24px;
+}
+
+/* Modal body */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Map container */
+.map-container {
+    position: relative;
+    height: 300px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.map-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1976d2;
+    font-size: 28px;
+    z-index: 10;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+.map-pin i {
+    animation: pinBounce 1.5s infinite ease-in-out;
+}
+
+@keyframes pinBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Form container */
+.form-container {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-group p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.radio-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-option input[type="radio"]:checked {
+    border-color: #1976d2;
+}
+
+.radio-option input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #1976d2;
+    border-radius: 50%;
+}
+
+.radio-option label {
+    font-size: 14px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Save button */
+.save-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #1976d2, #1565c0);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:hover {
+    background: linear-gradient(to right, #1565c0, #0d47a1);
+}
+
+.save-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+        height: 400px;
+    }
+    
+    .map-container {
+        width: 50%;
+        height: auto;
+        border-bottom: none;
+        border-right: 1px solid #eee;
+    }
+    
+    .form-container {
+        width: 50%;
+        overflow-y: auto;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+    .modal-header h2 {
+        font-size: 16px;
+    }
+    
+    .modal-header p {
+        font-size: 12px;
+    }
+    
+    .form-input {
+        padding: 10px;
+    }
+    
+    .save-btn {
+        padding: 12px;
+    }
+}
